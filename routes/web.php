@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,8 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
+// Admin All Route
+Route::controller(AdminController::class)->group(function(){  // Larael 9
+    Route::get('/admin/logout','destroy')->name('admin.logout');
+
+});
