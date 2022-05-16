@@ -20,6 +20,8 @@ class AdminController extends Controller
         return redirect('/login');
     } // End Method
 
+    
+
 
 }
 
