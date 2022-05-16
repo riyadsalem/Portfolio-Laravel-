@@ -11,18 +11,18 @@
                 <div class="card"><br><br>
 
                   <center>
-                    <img class="rounded-circle avatar-xl" src="{{ asset('backend/assets/images/small/img-5.jpg') }}"Card image cap">
+                    <img class="rounded-circle avatar-xl" src="{{ asset('backend/assets/images/small/img-5.jpg') }}" alt="Card image cap">
                   </center>
 
                     <div class="card-body">
                         <h4 class="card-title">Name: {{ $adminData->name }}</h4><hr>
                         <h4 class="card-title">User Email: {{ $adminData->email }}</h4><hr>
                         <h4 class="card-title">User Name: {{ $adminData->userName }}</h4><hr>
-                        <a href="" class="btn btn-info btn-rounded waves-effect waves-light">Edit Profile</a>
+                        <a href="{{ route('edit.profile') }}" class="btn btn-info btn-rounded waves-effect waves-light">Edit Profile</a>
                     </div>
                 </div>
                 </div>
-        
+                
 </div>
 
 </div>

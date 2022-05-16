@@ -29,4 +29,5 @@ require __DIR__.'/auth.php';
 Route::controller(AdminController::class)->group(function(){  // Larael 9
     Route::get('/admin/logout','destroy')->name('admin.logout');
     Route::get('/admin/profile','Profile')->name('admin.profile');
+    Route::get('/admin/edit','EditProfile')->name('edit.profile');
 });
