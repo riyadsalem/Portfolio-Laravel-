@@ -11,7 +11,7 @@
                 <div class="card-body">
 
 
-                    <h4 class="card-title">Edit Profile Page</h4>
+                    <h4 class="card-title">Edit Profile Page</h4><br>
 
                 <form action="{{ route('store.profile') }}" method="post" enctype="multipart/form-data">
                     @csrf
