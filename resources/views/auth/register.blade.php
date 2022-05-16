@@ -39,7 +39,8 @@
                         <h4 class="text-muted text-center font-size-18"><b>Register</b></h4>
     
                         <div class="p-3">
-                            <form class="form-horizontal mt-3" method="POST" action="{{ route('register') }}">
+                            <form class="form-horizontal mt-3" method="POST" 
+                            action="{{ route('register') }}">
                             @csrf
 
                             <div class="form-group mb-3 row">
