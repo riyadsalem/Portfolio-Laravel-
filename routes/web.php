@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\HomeSliderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,16 @@ Route::controller(AdminController::class)->group(function(){  // Larael 9
     // Change Password Route
     Route::get('/change/password','ChangePassword')->name('change.password');
     Route::post('/update/password','UpdatePassword')->name('update.password');
+
+
+});
+
+
+
+// Home Slide All Route
+Route::controller(HomeSliderController::class)->group(function(){  // Larael 9
+
+    Route::get('/home/slide','HomeSlider')->name('home.slide');
 
 
 });
