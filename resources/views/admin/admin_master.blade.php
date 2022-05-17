@@ -127,11 +127,16 @@
            @endif 
           </script>
 
+        <!-- For long description in about bage:: Start -->
+        
         <!--tinymce js-->
         <script src="{{ asset('backend/assets/libs/tinymce/tinymce.min.js') }} "></script>
 
         <!-- init js -->
         <script src="{{ asset('backend/assets/js/pages/form-editor.init.js') }} "></script>
+
+        <!-- For long description in about bage:: End -->
+
 
          <!-- Required datatable js -->
         <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
