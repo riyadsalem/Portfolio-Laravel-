@@ -14,9 +14,10 @@
 
                     <h4 class="card-title">Home Slide Page</h4><br>
 
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ route('update.slider') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
+                    <input type="hidden" name="id" value="{{ $homeslide->id }}">
 
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
@@ -58,7 +59,7 @@
                     src=" {{ 
                       (!empty($homeslide->home_slide))
                       ?
-                      url('upload/home_slide/'.$homeslide->home_slide)
+                     asset($homeslide->home_slide)
                       :
                       url('upload/no_image.jpg')
                      }}" 
