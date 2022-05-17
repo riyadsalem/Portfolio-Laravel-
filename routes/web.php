@@ -46,7 +46,7 @@ Route::controller(AdminController::class)->group(function(){  // Larael 9
 
 
 // Home Slide All Route
-Route::controller(HomeSliderController::class)->group(function(){  // Larael 9
+Route::controller(HomeSliderController::class)->group(function(){
 
     Route::get('/home/slide','HomeSlider')->name('home.slide');
 
