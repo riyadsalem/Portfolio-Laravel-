@@ -75,7 +75,7 @@ class PortfolioController extends Controller
         if($request->file('portfolio_image')){
             $image = $request->file('portfolio_image');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(636,852)->save('upload/portfolio/'.$name_gen);
+            Image::make($image)->resize(1020,519)->save('upload/portfolio/'.$name_gen);
 
             $save_url = 'upload/portfolio/'.$name_gen;
 
@@ -129,7 +129,14 @@ class PortfolioController extends Controller
          );
  
          return redirect()->back()->with($notification);
+         
     } // End Method
 
+    public function PortfolioDetails($id){
+
+        $portfolio = Portfolio::findOrFail($id);
+        return view('frontend.portfolio_details',compact('portfolio'));
+
+    } // End Method
 
 }
