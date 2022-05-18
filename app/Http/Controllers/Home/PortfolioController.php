@@ -61,5 +61,59 @@ class PortfolioController extends Controller
     } // End Method
 
 
+    public function EditPortfolio($id){
+
+        $portfolio = Portfolio::findOrFail($id);
+        return view('admin.portfolio.portfolio_edit',compact('portfolio'));
+
+    } // End Method
+
+    public function UpdatePortfolio(Request $request){
+
+        $portfolio_id = $request->id;
+
+        if($request->file('portfolio_image')){
+            $image = $request->file('portfolio_image');
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(636,852)->save('upload/portfolio/'.$name_gen);
+
+            $save_url = 'upload/portfolio/'.$name_gen;
+
+
+            Portfolio::findOrFail($portfolio_id)->update([
+                'portfolio_name' => $request->portfolio_name,
+                'portfolio_title' => $request->portfolio_title,
+                'portfolio_description' => $request->portfolio_description,
+                'portfolio_image' =>  $save_url,
+            ]);
+
+
+            $notification = array(
+                'message' => 'Portfolio Updated With Image Successfully',
+                'alert-type' => 'success',
+            );
+    
+            return redirect()->route('all.portfolio')->with($notification);
+
+
+        }else{
+
+            Portfolio::findOrFail($portfolio_id)->update([
+                'portfolio_name' => $request->portfolio_name,
+                'portfolio_title' => $request->portfolio_title,
+                'portfolio_description' => $request->portfolio_description,
+            ]);
+
+
+            $notification = [
+                'message' => 'Portfolio Updated Without Image Successfully',
+                'alert-type' => 'success',
+            ];
+    
+            return redirect()->route('all.portfolio')->with($notification);
+        }
+
+    } // End Method
+
 
 }
