@@ -20,7 +20,12 @@
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Portfolio Name</label>
                         <div class="col-sm-10">
-                            <input name="portfolio_name" class="form-control" type="text" id="example-text-input"">
+                            <input name="portfolio_name" class="form-control" type="text" id="example-text-input">
+
+                            @error('portfolio_name')
+                            <span class="text-danger">{{ $message }} </span>
+                            @enderror
+
                         </div>
                     </div>
                     <!-- end row -->
@@ -29,6 +34,11 @@
                         <label for="example-text-input" class="col-sm-2 col-form-label">Portfolio Title</label>
                         <div class="col-sm-10">
                             <input name="portfolio_title" class="form-control" type="text"id="example-text-input">
+
+                            @error('portfolio_title')
+                            <span class="text-danger">{{ $message }} </span>
+                            @enderror
+
                         </div>
                     </div>
                     <!-- end row -->
@@ -45,6 +55,12 @@
                         <label for="example-text-input" class="col-sm-2 col-form-label">Portfolio Image</label>
                         <div class="col-sm-10">
                             <input name="portfolio_image" class="form-control" type="file" id="image" >
+
+                            
+                            @error('portfolio_image')
+                            <span class="text-danger">{{ $message }} </span>
+                            @enderror
+
                         </div>
                     </div>
                     <!-- end row -->
