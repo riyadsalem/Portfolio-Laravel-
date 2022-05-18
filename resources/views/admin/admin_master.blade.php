@@ -147,9 +147,12 @@
 
         
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <!-- For shwo Deleted Alert :::::Start::::: in all_multiimage.blade.php -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="{{ asset('backend/assets/js/code.js') }}"></script>
+        <!-- For shwo Deleted Alert :::::End::::: in all_multiimage.blade.php   -->
 
- <script src="{{ asset('backend/assets/js/code.js') }}"></script>
+
  <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
 
  
