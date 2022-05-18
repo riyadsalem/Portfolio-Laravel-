@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\HomeSlide;
 use Image;
+use App\Models\MultiImage;
 
 
 class AboutController extends Controller
@@ -78,5 +79,11 @@ class AboutController extends Controller
         return view('frontend.about_page',compact('aboutpage','homeslide'));
 
     } // End Method
+
+
+    public function AboutMultiImage(){
+        return view('admin.about_page.multimage');
+    } // End Method
+
 
 }
