@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
+use App\Http\Controllers\Home\BlogCategoryController;
+
 
 
 
@@ -44,7 +46,6 @@ Route::controller(AdminController::class)->group(function(){  // Larael 9
     Route::get('/change/password','ChangePassword')->name('change.password');
     Route::post('/update/password','UpdatePassword')->name('update.password');
 
-
 });
 
 
@@ -79,5 +80,9 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::post('/update/portfolio','UpdatePortfolio')->name('update.portfolio');
     Route::get('/delete/portfolio/{id}','DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}','PortfolioDetails')->name('portfolio.details');
+});
 
+// Blg Category All Route
+Route::controller(BlogCategoryController::class)->group(function(){
+    Route::get('/all/blog/category','AllBlogCategory')->name('all.blog.category');
 });
