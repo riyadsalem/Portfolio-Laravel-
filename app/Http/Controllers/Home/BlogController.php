@@ -18,6 +18,11 @@ class BlogController extends Controller
 
     } // End Method
 
+    public function AddBlog(){
+        return view('admin.blogs.blogs_add');
+    } // End Method
+
+    
 
 
 
