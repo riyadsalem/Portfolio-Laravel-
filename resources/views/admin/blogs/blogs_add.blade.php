@@ -23,24 +23,22 @@
 
                     <h4 class="card-title">Add Blog Page</h4><br>
 
-                <form action="{{ route('store.portfolio') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('store.blog') }}" method="post" enctype="multipart/form-data">
                     @csrf
-
-                    @php 
-                    $blogCategory = App\Models\BlogCategory::latest()->get()
-                    @endphp
 
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Blog Category Name</label>
                         <div class="col-sm-10">
 
-                        <select class="form-select" aria-label="Default select example" name="blog_description">
-                            @foreach($blogCategory as $item)
-                            <option value="{{ $item->id }}">{{ $item->blog_category }}</option>
+                        <select class="form-select" aria-label="Default select example" name="blog_category_id">
+
+                        <option value="" selected="">Open this select menu</option>
+                            @foreach($categories as $cat)
+                            <option value="{{ $cat->id }}">{{ $cat->blog_category }}</option>
                             @endforeach
                         </select>
 
-                            @error('blog_description')
+                            @error('blog_category_id')
                             <span class="text-danger">{{ $message }} </span>
                             @enderror
 
