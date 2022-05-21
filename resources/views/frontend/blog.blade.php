@@ -1,6 +1,10 @@
 @extends('frontend.main_master')
 @section('main')
 
+@section('title')
+Blog Page
+@endsection
+
     <!-- breadcrumb-area -->
     <section class="breadcrumb__wrap">
         <div class="container custom-container">
