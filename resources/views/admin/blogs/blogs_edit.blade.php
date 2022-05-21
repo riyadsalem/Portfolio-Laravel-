@@ -23,8 +23,10 @@
 
                     <h4 class="card-title">Edit Blog Page</h4><br>
 
-                <form action="{{ route('store.blog') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('update.blog') }}" method="post" enctype="multipart/form-data">
                     @csrf
+
+                    <input type="hidden" name="id" value="{{ $blogs->id }}">
 
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Blog Category Name</label>
