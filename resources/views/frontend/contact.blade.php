@@ -41,64 +41,78 @@
     <!-- contact-area -->
     <div class="contact-area">
         <div class="container">
-            <form action="#" class="contact__form">
+
+            <form action="{{ route('store.message') }}" class="contact__form" method="post">
+                @csrf 
+
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="text" placeholder="Enter your name*">
+                        <input type="text" placeholder="Enter your name*" name="name" required>
+                        <!--  
+                        @error('name')
+                            <span class="text-danger">{{ $message }} </span>
+                        @enderror
+                        -->
                     </div>
                     <div class="col-md-6">
-                        <input type="email" placeholder="Enter your mail*">
+                        <input type="email" placeholder="Enter your mail*" name="email" required>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" placeholder="Enter your subject*">
+                        <input type="text" placeholder="Enter your subject*" name="subject" required>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" placeholder="Your Budget*">
+                        <input type="number" placeholder="Your Phone*" name="phone" required>
                     </div>
                 </div>
-                <textarea name="message" id="message" placeholder="Enter your massage*"></textarea>
+                <textarea id="message" placeholder="Enter your massage*" name="message" required></textarea>
+
                 <button type="submit" class="btn">send massage</button>
+
             </form>
         </div>
     </div>
     <!-- contact-area-end -->
 
+
     <!-- contact-info-area -->
     <section class="contact-info-area">
+
+        @php 
+        $allfooter = App\Models\Footer::find(1);
+        @endphp
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <div class="contact__info">
                         <div class="contact__info__icon">
-                            <img src="assets/img/icons/contact_icon01.png" alt="">
+                            <img src="{{ asset('frontend/assets/img/icons/contact_icon01.png' ) }}" alt="">
                         </div>
                         <div class="contact__info__content">
                             <h4 class="title">address line</h4>
-                            <span>Bowery St, New York, <br> NY 10013,USA</span>
+                            <span>{{ $allfooter->address }}</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="contact__info">
                         <div class="contact__info__icon">
-                            <img src="assets/img/icons/contact_icon02.png" alt="">
+                            <img src="{{ asset('frontend/assets/img/icons/contact_icon02.png') }}" alt="">
                         </div>
                         <div class="contact__info__content">
                             <h4 class="title">Phone Number</h4>
-                            <span>+1255 - 568 - 6523</span>
-                            <span>+1255 - 568 - 6523</span>
+                            <span>{{ $allfooter->number }}</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="contact__info">
                         <div class="contact__info__icon">
-                            <img src="assets/img/icons/contact_icon03.png" alt="">
+                            <img src="{{ asset('frontend/assets/img/icons/contact_icon03.png') }}" alt="">
                         </div>
                         <div class="contact__info__content">
                             <h4 class="title">Mail Address</h4>
-                            <span>email@example.com</span>
-                            <span>info@yourdomain.com</span>
+                            <span>{{ $allfooter->email }}</span>
                         </div>
                     </div>
                 </div>
