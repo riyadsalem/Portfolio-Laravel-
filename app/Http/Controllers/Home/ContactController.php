@@ -75,5 +75,13 @@ class ContactController extends Controller
 
     } // End Method
 
+    public function MessageDetails($id){
+
+        $messagedetails = Contact::findOrFail($id);
+        return view('admin.contact.message_details',compact('messagedetails'));
+
+    } // End Method
+
+
 
 }

@@ -44,7 +44,7 @@
                                 <td>{{ $item->phone }}</td>
                                 <th>{{ Carbon\Carbon::parse($item->created_at)->diffForhumans() }}</th>
                                 <td>
-                                    <a href="{{ route('delete.message',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete" ><i class="fas fa-trash-alt"></i></a>
+                                    <a href="{{ route('message.details',$item->id) }}" class="btn btn-primary sm" title="Delete Data"><i class="fas fa-eye"></i></a>
                                     <a href="{{ route('delete.message',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete" ><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

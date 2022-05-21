@@ -83,6 +83,8 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::post('/update/portfolio','UpdatePortfolio')->name('update.portfolio');
     Route::get('/delete/portfolio/{id}','DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}','PortfolioDetails')->name('portfolio.details');
+    Route::get('/home/portfolio','HomePortfolio')->name('home.portfolio');
+
 });
 
 // Blg Category All Route
@@ -123,5 +125,6 @@ Route::controller(ContactController::class)->group(function(){
     Route::post('/store/message','StoreMessage')->name('store.message');
     Route::get('/contact/message','ContactMessage')->name('contact.message');
     Route::get('/delete/message/{id}','DeleteMessage')->name('delete.message');
-    
+    Route::get('/message/details{id}','MessageDetails')->name('message.details');
+
 });
