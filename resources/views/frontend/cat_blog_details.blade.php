@@ -7,7 +7,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-10">
                     <div class="breadcrumb__wrap__content">
-                        <h2 class="title"></h2>
+                        <h2 class="title">{{ $categoryname->blog_category }}</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -17,15 +17,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>s
         <div class="breadcrumb__wrap__icon">
             <ul>
-                <li><img src="assets/img/icons/breadcrumb_icon01.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon02.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon03.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon04.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon05.png" alt=""></li>
-                <li><img src="assets/img/icons/breadcrumb_icon06.png" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon01.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon02.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon03.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon04.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon05.png') }}" alt=""></li>
+                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon06.png') }}" alt=""></li>
             </ul>
         </div>
     </section>
@@ -53,7 +53,7 @@
 
                             <h2 class="title"><a href="{{ route('blog.details',$item->id) }}">
                                 {{ $item->blog_title }}</a></h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui dicta nihil aut ut accusantium nam quia laboriosam sed, et, ipsum ullam eum ipsa, omnis aliquid officia hic repudiandae fugiat pariatur!</p>
+                            <p>{!! Str::limit($item->blog_description,200) !!}</p>
                             <ul class="blog__post__meta">
                                 <li><i class="fal fa-calendar-alt"></i>
                                 {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</li>
