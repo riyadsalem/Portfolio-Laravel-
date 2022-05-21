@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-Blog Page
+Blog | RiyadMS Website
 @endsection
 
     <!-- breadcrumb-area -->

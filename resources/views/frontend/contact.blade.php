@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-Contact Page
+Contact | RiyadMS Website
 @endsection
 
     <!-- breadcrumb-area -->

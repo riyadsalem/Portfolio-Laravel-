@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-About Page
+About | RiyadMS Website
 @endsection
 
 

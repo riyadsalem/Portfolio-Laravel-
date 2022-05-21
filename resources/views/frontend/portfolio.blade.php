@@ -2,7 +2,7 @@
 @section('main')
 
 @section('title')
-Portfolio Page
+Portfolio | RiyadMS Website
 @endsection
 
     <!-- breadcrumb-area -->
