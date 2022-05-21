@@ -32,7 +32,7 @@ class ContactController extends Controller
             'message.required' => 'Contact Message Message is Required',
         ]);
         */
-        
+
         Contact::insert([
             'name' => $request->name,
             'email' => $request->email,
@@ -52,7 +52,28 @@ class ContactController extends Controller
     } // End method
 
 
+    public function ContactMessage(){
 
+        $contacts = Contact::latest()->get();
+        return view('admin.contact.all_contact',compact('contacts'));
+
+    } // End Method
+
+
+
+    public function DeleteMessage($id){
+
+        Contact::findOrFail($id)->delete();
+
+        $notification = [
+            'message' => 'Your Message Deleted Successfully',
+            'alert-type' => 'success',
+        ];
+
+        return redirect()->back()->with($notification);
+
+
+    } // End Method
 
 
 }
