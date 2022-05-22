@@ -156,7 +156,10 @@
         <!-- For shwo Deleted Alert :::::End::::: in all_multiimage.blade.php   -->
 
 
+        <!-- For Shwo Error Message validate in blog_category_add for input file :: Start -->
         <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
+        <!-- For Shwo Error Message validate in blog_category_add for input file :: End -->
+
 
         <!-- For shwo Tags Input in Add Blog  :::::Start::::: in blogs_add.blade.php -->
          <script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js" ></script>
