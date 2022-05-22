@@ -48,33 +48,32 @@
 </div>
 
 <script type="text/javascript">
-
-    $(document).ready(function(){
+    $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                blog_category : {
-                    required: true,
-                },
-            },
-            messages: {
                 blog_category: {
-                    requird : 'Please Enter Blog Category',
+                    required : true,
+                }, 
+            },
+            messages :{
+                blog_category: {
+                    required : 'Please Enter Blog Category',
                 },
             },
-            errorElement: 'span',
-            errorPlacement: function(error,element){
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element, errorClass, validClass){
+            highlight : function(element, errorClass, validClass){
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element,errorClass, validClass){
+            unhighlight : function(element, errorClass, validClass){
                 $(element).removeClass('is-invalid');
             },
         });
     });
-
+    
 </script>
 
 @endsection
