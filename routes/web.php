@@ -27,7 +27,7 @@ use App\Http\Controllers\Home\ContactController;
 
 Route::get('/', function () {
     return view('frontend.index');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -128,3 +128,4 @@ Route::controller(ContactController::class)->group(function(){
     Route::get('/message/details{id}','MessageDetails')->name('message.details');
 
 });
+
