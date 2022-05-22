@@ -11,9 +11,6 @@ use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
 
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +33,8 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
+Route::middleware(['auth'])->group(function(){
+
 // Admin All Route
 Route::controller(AdminController::class)->group(function(){  // Larael 9
 
@@ -49,7 +48,7 @@ Route::controller(AdminController::class)->group(function(){  // Larael 9
     Route::get('/change/password','ChangePassword')->name('change.password');
     Route::post('/update/password','UpdatePassword')->name('update.password');
 
-});
+}); // End Controller(AdminController::class)
 
 
 
@@ -57,7 +56,7 @@ Route::controller(AdminController::class)->group(function(){  // Larael 9
 Route::controller(HomeSliderController::class)->group(function(){
     Route::get('/home/slide','HomeSlider')->name('home.slide');
     Route::post('/update/slide','UpdateSlider')->name('update.slider');
-});
+}); // End Controller(HomeSliderController::class)
 
 
 // About Page All Route
@@ -71,7 +70,7 @@ Route::controller(AboutController::class)->group(function(){
     Route::get('/edit/multi/image/{id}','EditMultiImage')->name('edit.multi.image');
     Route::post('/update/multi/image','UpdateMultiImage')->name('update.multi.image');
     Route::get('/delete/multi/image/{id}','DeleteMultiImage')->name('delete.multi.image');
-});
+}); // End Controller(AboutController::class)
 
 
 // Home Slide All Route
@@ -85,7 +84,8 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::get('/portfolio/details/{id}','PortfolioDetails')->name('portfolio.details');
     Route::get('/home/portfolio','HomePortfolio')->name('home.portfolio');
 
-});
+}); // End Controller(ProtfolioController::class)
+
 
 // Blg Category All Route
 Route::controller(BlogCategoryController::class)->group(function(){
@@ -95,7 +95,7 @@ Route::controller(BlogCategoryController::class)->group(function(){
     Route::get('/edit/blog/category/{id}','EditBlogCategory')->name('edit.blog.category');
     Route::post('/update/blog/category','UpdateBlogCategory')->name('update.blog.category');
     Route::get('/delete/blog/category/{id}','DeleteBlogCategory')->name('delete.blog.category');
-});
+}); // End Controller(BlogCategoryController::class)
 
 
 // Blog Page All Route
@@ -109,14 +109,15 @@ Route::controller(BlogController::class)->group(function(){
     Route::get('/blog/details/{id}','BlogDetails')->name('blog.details');
     Route::get('/category/blog/{id}','CategoryBlog')->name('category.blog');
     Route::get('/blog','HomeBlog')->name('home.blog');
-});
+}); // End Controller(BlogController::class)
+
 
 // Footer All Route
 Route::controller(FooterController::class)->group(function(){
     Route::get('/footer/setup','FooterSetup')->name('footer.setup');
     Route::post('/update/footer','UpdateFooter')->name('update.footer');
 
-});
+}); // End Controller(FooterController::class)
 
 
 // Contact All Route
@@ -127,5 +128,7 @@ Route::controller(ContactController::class)->group(function(){
     Route::get('/delete/message/{id}','DeleteMessage')->name('delete.message');
     Route::get('/message/details{id}','MessageDetails')->name('message.details');
 
-});
+}); // End Controller(ContactController::class)
 
+
+}); // End middleware(['auth'])
