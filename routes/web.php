@@ -154,4 +154,6 @@ Route::controller(ServicesController::class)->group(function(){
     Route::post('/update/service','UpdateService')->name('update.service');
     Route::get('/delete/service/{id}','DeleteService')->name('delete.service');
     Route::get('/service/details/{id}','ServiceDetails')->name('service.details');
+    Route::get('/service/payment/{id}','ServicePayment')->name('service.payment');
 }); 
+

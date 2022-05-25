@@ -20,6 +20,12 @@ return new class extends Migration
             $table->string('services_title')->nullable();
             $table->text('service_description')->nullable();
             $table->text('service_long_description')->nullable();
+
+            $table->string('service_code');
+            $table->string('service_qty');
+            $table->string('selling_price');
+            $table->string('discount_price')->nullable();
+
             $table->string('services__list_desc_1')->nullable();
             $table->string('services__list_desc_2')->nullable();
             $table->string('services__list_desc_3')->nullable();

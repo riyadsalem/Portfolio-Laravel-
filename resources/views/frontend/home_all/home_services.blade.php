@@ -32,7 +32,20 @@ $services = App\Models\Services::latest()->get();
                             <img class="light" src="{{ asset($service->services_icon) }}" alt="">
                         </div>
                         <h3 class="title"><a target="_blank" href="{{ route('service.details',$service->id) }}">{{ $service->services_title }}</a></h3>
-                        <p>{{ Str::limit($service->service_description,60) }}</p>
+
+                        <h5 >Selling Price <strong style="color:#0054ff;">{{ $service->selling_price }}$</strong> </h5> 
+                        <h5 >Discount Price 
+                            @if($service->discount_price == NULL)
+                            <strong style="color:#0054ff;">0$</strong> 
+                            @else
+                            <strong style="color:#0054ff;">{{ $service->discount_price }}$</strong> 
+                            @endif
+                        </h5> 
+                        <h5 >Total Price <strong style="color:#0054ff;">{{ $service->selling_price - $service->discount_price }}$</strong> </h5> <br>
+
+
+
+                        <p>{{ Str::limit($service->service_description,100) }}</p>
                         <ul class="services__list">
                             <li>{{ $service->services__list_desc_1 }}</li>
                             <li>{{ $service->services__list_desc_2 }}</li>
@@ -48,7 +61,7 @@ $services = App\Models\Services::latest()->get();
                             @endif         
                             
                         </ul>
-                        <a target="_blank" href="{{ route('service.details',$service->id) }}" class="btn border-btn">Read more</a>
+                        <a target="_blank" href="{{ route('service.payment',$service->id) }}" class="btn border-btn">Pay Now</a>
                     </div>
                 </div>
             </div>

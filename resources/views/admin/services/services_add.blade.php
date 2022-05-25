@@ -58,6 +58,56 @@
                     </div>
                     <!-- end row -->
 
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Service Code</label>
+                        <div class="col-sm-10">
+                            <input name="service_code" class="form-control" type="text" id="example-text-input">
+
+                            @error('service_code	')
+                            <span class="text-danger">{{ $message }} </span>
+                            @enderror
+
+                        </div>
+                    </div>
+
+                    <!-- end row -->
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Service quantity</label>
+                        <div class="col-sm-10">
+                            <input name="service_qty" class="form-control" type="text" id="example-text-input">
+
+                            @error('service_qty')
+                            <span class="text-danger">{{ $message }} </span>
+                            @enderror
+
+                        </div>
+                    </div>
+
+                    <!-- end row -->
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Selling Price</label>
+                        <div class="col-sm-10">
+                            <input name="selling_price" class="form-control" type="text" id="example-text-input">
+
+                            @error('selling_price')
+                            <span class="text-danger">{{ $message }} </span>
+                            @enderror
+
+                        </div>
+                    </div>
+
+                    <!-- end row -->
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Discount Price</label>
+                        <div class="col-sm-10">
+                            <input name="discount_price" class="form-control" type="text" id="example-text-input">
+
+                            @error('discount_price')
+                            <span class="text-danger">{{ $message }} </span>
+                            @enderror
+
+                        </div>
+                    </div>
 
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Service List Description 1</label>

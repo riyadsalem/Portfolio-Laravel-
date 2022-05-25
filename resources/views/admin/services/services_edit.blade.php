@@ -44,6 +44,38 @@
                     <!-- end row -->
 
                     <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Service Code</label>
+                        <div class="col-sm-10">
+                            <input name="service_code" class="form-control" type="text" id="example-text-input" value="{{ $service->service_code }}">
+                        </div>
+                    </div>
+
+                    <!-- end row -->
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Service quantity</label>
+                        <div class="col-sm-10">
+                            <input name="service_qty" class="form-control" type="text" id="example-text-input" value="{{ $service->service_qty }}">
+                        </div>
+                    </div>
+
+                    <!-- end row -->
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Selling Price</label>
+                        <div class="col-sm-10">
+                            <input name="selling_price" class="form-control" type="text" id="example-text-input" value="{{ $service->selling_price }}">
+                        </div>
+                    </div>
+
+                    <!-- end row -->
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Discount Price</label>
+                        <div class="col-sm-10">
+                            <input name="discount_price" class="form-control" type="text" id="example-text-input" value="{{ $service->discount_price }}">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Service List Description 1</label>
                         <div class="col-sm-10">
                             <input name="services__list_desc_1" class="form-control" type="text" id="example-text-input" value="{{ $service->services__list_desc_1 }}">

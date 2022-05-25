@@ -25,9 +25,10 @@
                             <thead>
                             <tr>
                                 <th>Sl</th>
-                                <th>services Title</th>
-                                <th>services Icon</th>
-                                <th>services Image</th>
+                                <th>Services Title</th>
+                                <th>Services Code</th>
+                                <th>Services Price</th>
+                                <th>Services Image</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -39,7 +40,8 @@
                             <tr>
                                 <td>{{ $i++}}</td>
                                 <td>{{ $item->services_title }}</td>
-                                <td><img src="{{ asset($item->services_icon) }}" alt="" style="width:60px; height:60px"></td>
+                                <td>{{ $item->service_code  }}</td>
+                                <td>{{ $item -> selling_price}}$</td>
                                 <td><img src="{{ asset($item->services_image) }}" alt="" style="width:60px; height:60px"></td>
                                 <td>
                                     <a href="{{ route('edit.service',$item->id) }}" class="btn btn-info sm" title="Edit Data"><i class="fas fa-edit"></i></a>

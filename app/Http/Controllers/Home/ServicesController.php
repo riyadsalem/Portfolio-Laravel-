@@ -29,6 +29,9 @@ class ServicesController extends Controller
             'services_title' => 'required',
             'service_description' => 'required',
             'service_long_description' => 'required',
+            'service_code' => 'required',
+            'service_qty' => 'required',
+            'selling_price' => 'required',
             'services_image' => 'required',
             'services_icon' => 'required',
             'services__list_desc_1' => 'required',
@@ -38,6 +41,9 @@ class ServicesController extends Controller
             'services_title.required' => 'Service Title is Required',
             'service_description.required' => 'Service Short Description is Required',
             'service_long_description.required' => 'Service Long Description is Required',
+            'service_code.required' => 'Service Code is Required',
+            'service_qty.required' => 'Service Quantity is Required',
+            'selling_price.required' => 'Selling Price is Required',
             'services_image.required' => 'Service Image is Required',
             'services_icon.required' => 'Service Icon is Required',
             'services__list_desc_1.required' => 'Service list Description 1 is Required',
@@ -64,6 +70,10 @@ class ServicesController extends Controller
                 'services_title' => $request->services_title,
                 'service_description' => $request->service_description,
                 'service_long_description' => $request->service_long_description,
+                'service_code' => $request->service_code,
+                'service_qty' => $request->service_qty,
+                'selling_price' => $request->selling_price,
+                'discount_price' => $request->discount_price,
                 'services__list_desc_1' => $request->services__list_desc_1,
                 'services__list_desc_2' => $request->services__list_desc_2,
                 'services__list_desc_3' => $request->services__list_desc_3,
@@ -117,6 +127,10 @@ class ServicesController extends Controller
                 'services_title' => $request->services_title,
                 'service_description' => $request->service_description,
                 'service_long_description' => $request->service_long_description,
+                'service_code' => $request->service_code,
+                'service_qty' => $request->service_qty,
+                'selling_price' => $request->selling_price,
+                'discount_price' => $request->discount_price,
                 'services__list_desc_1' => $request->services__list_desc_1,
                 'services__list_desc_2' => $request->services__list_desc_2,
                 'services__list_desc_3' => $request->services__list_desc_3,
@@ -142,6 +156,10 @@ class ServicesController extends Controller
                 'services_title' => $request->services_title,
                 'service_description' => $request->service_description,
                 'service_long_description' => $request->service_long_description,
+                'service_code' => $request->service_code,
+                'service_qty' => $request->service_qty,
+                'selling_price' => $request->selling_price,
+                'discount_price' => $request->discount_price,
                 'services__list_desc_1' => $request->services__list_desc_1,
                 'services__list_desc_2' => $request->services__list_desc_2,
                 'services__list_desc_3' => $request->services__list_desc_3,
@@ -192,5 +210,9 @@ class ServicesController extends Controller
     } // End Method
 
 
+    public function ServicePayment($id){
+        $service = Services::findOrFail($id);
+        return view('frontend.service_payment',compact('service'));
+    } // End Mehtod
 
 } // End Class ServicesController
