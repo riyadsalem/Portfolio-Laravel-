@@ -12,6 +12,7 @@ use App\Http\Controllers\Home\ContactController;
 
 use App\Http\Controllers\Payment\PayPalController;
 
+use App\Http\Controllers\Home\ServicesController;
 
 
 /*
@@ -141,3 +142,16 @@ Route::get('/go-payment',[PayPalController::class,'goPayment'])->name('payment.g
 Route::get('/payment',[PayPalController::class,'payment'])->name('payment');
 Route::get('/cancel',[PayPalController::class,'cancel'])->name('payment.cancel');
 Route::get('/payment/success',[PayPalController::class,'success'])->name('payment.success');
+
+
+
+// Services All Route
+Route::controller(ServicesController::class)->group(function(){
+    Route::get('/all/services','AllServices')->name('all.services');
+    Route::get('/add/services','AddServices')->name('add.services');
+    Route::post('/store/services','StoreServices')->name('store.service');
+    Route::get('/edit/service/{id}','EditService')->name('edit.service');
+    Route::post('/update/service','UpdateService')->name('update.service');
+    Route::get('/delete/service/{id}','DeleteService')->name('delete.service');
+    Route::get('/service/details/{id}','ServiceDetails')->name('service.details');
+}); 
