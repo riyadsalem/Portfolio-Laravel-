@@ -24,11 +24,40 @@ Payment Page | RiyadMS Website
                     <div class="col-lg-6">
                         <div class="homeContact__form">
                             <form action="#">
-                                <input type="text" placeholder="Enter name*">
-                                <input type="email" placeholder="Enter mail*">
-                                <input type="number" placeholder="Enter number*">
-                                <textarea name="message" placeholder="Enter Massage*"></textarea>
-                                <button type="submit">Send Message</button>
+                                <div class="row">
+
+                                       <input name="first_name" type="text" placeholder="First Name*">
+                                       <input name="last_name" type="text" placeholder="Last Name*">
+                                       <input name="company_name" type="text" placeholder="Company Name*">
+                                       <input name="country" type="text" placeholder="Country*">
+
+                                       <input name="street_address" type="text" placeholder="Street Address*">
+                                       <input name="zip_code" type="text" placeholder="Zip Code*">
+                                       <input name="user_email" type="email" placeholder="Email Address*">
+                                       <input name="phone_number" type="number" placeholder="Phone Number*">
+
+                                        <textarea name="message" placeholder="Enter Massage*"></textarea>
+
+                                        <div class="row">
+
+<div class="col-md-4">
+    <input type="radio" name="payment_method" value="stripe"> Stripe
+</div><!-- End col-md-4 -->
+
+<div class="col-md-4">
+    <input type="radio" name="payment_method" value="paypal"> PayPal
+</div><!-- End col-md-4 -->
+
+
+<div class="col-md-4">
+    <input type="radio" name="payment_method" value="cash"> Cash
+</div><!-- End col-md-4 -->
+
+</div><!-- End row -->
+                                        <a href="" class="btn" style="margin-top:30px;">PayPal</a>
+                                </div>
+
+
                             </form>
                         </div>
                     </div>
@@ -38,5 +67,5 @@ Payment Page | RiyadMS Website
     </section>
     <!-- contact-area-end -->
 
-    
+
 @endsection

@@ -9,10 +9,10 @@ use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
+use App\Http\Controllers\Home\ServicesController;
 
 use App\Http\Controllers\Payment\PayPalController;
-
-use App\Http\Controllers\Home\ServicesController;
+use App\Http\Controllers\Payment\StripeController;
 
 
 /*
@@ -138,13 +138,6 @@ Route::controller(ContactController::class)->group(function(){
 }); // End middleware(['auth'])
 
 
-Route::get('/go-payment',[PayPalController::class,'goPayment'])->name('payment.go');
-Route::get('/payment',[PayPalController::class,'payment'])->name('payment');
-Route::get('/cancel',[PayPalController::class,'cancel'])->name('payment.cancel');
-Route::get('/payment/success',[PayPalController::class,'success'])->name('payment.success');
-
-
-
 // Services All Route
 Route::controller(ServicesController::class)->group(function(){
     Route::get('/all/services','AllServices')->name('all.services');
@@ -157,3 +150,14 @@ Route::controller(ServicesController::class)->group(function(){
     Route::get('/service/payment/{id}','ServicePayment')->name('service.payment');
 }); 
 
+
+
+Route::get('/go-payment',[PayPalController::class,'goPayment'])->name('payment.go');
+Route::get('/payment',[PayPalController::class,'payment'])->name('payment');
+Route::get('/cancel',[PayPalController::class,'cancel'])->name('payment.cancel');
+Route::get('/payment/success',[PayPalController::class,'success'])->name('payment.success');
+
+
+
+Route::get('/stripe',[StripeController::class,'stripe']);
+Route::post('/stripe',[StripeController::class,'stripePost'])->name('stripe.post');
